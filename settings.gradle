@@ -1,4 +1,5 @@
 rootProject.name = 'SpringCourse'
 include 'Course1'
 include 'Course2'
+include 'Course2.1'
 
