@@ -15,7 +15,7 @@ import lombok.extern.slf4j.Slf4j;
 
 /*
  *  D&T: 2019/2/26 14:55
- *  Des：
+ *  Des：配置单数据源
  */
 @SpringBootApplication
 @Slf4j
@@ -43,15 +43,15 @@ public class DataSourceApplication
     private void showConnection()
             throws SQLException
     {
-        log.info(mDataSource.toString());
+        log.info("mDataSource=" + mDataSource.toString());
 
         Connection conn = mDataSource.getConnection();
-        log.info(conn.toString());
+        log.info("connection=" + conn.toString());
         conn.close();
     }
 
     private void showData() {
         mJdbcTemplate.queryForList("SELECT * FROM user")
-                     .forEach(row -> log.info(row.toString()));
+                     .forEach(row -> log.info("row info=" + row.toString()));
     }
 }
