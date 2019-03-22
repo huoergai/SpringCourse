@@ -16,6 +16,9 @@ public class FooServiceImp
     @Autowired
     private JdbcTemplate mJdbcTemplate;
 
+    @Autowired
+    private FooService mFooService;
+
     @Transactional
     @Override
     public void insert() {
@@ -39,4 +42,14 @@ public class FooServiceImp
     {
         insertThenRollback();
     }
+
+    public void invokeInsertThenRollbackUltimate()
+            throws RollbackExpection
+    {
+        mFooService.insertThenRollback();
+    }
+
+    /* -------------------------- ultimate ----------------------- */
+
+
 }
